@@ -3,6 +3,7 @@ version: '3.8'
 services:
   web:
     image: web6:latest
+    container_name: web6-web-1
     build:
       context: .
       dockerfile: Dockerfile
@@ -31,6 +32,7 @@ services:
 
   certbot:
     image: certbot/certbot:latest
+    container_name: certbot
     volumes:
       - ./certbot/www:/var/www/certbot
       - ./certbot/conf:/etc/letsencrypt
